@@ -1,6 +1,7 @@
 # Logs
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
@@ -21,3 +22,6 @@ node_modules/
 
 # Code Coverage Reports
 coverage/
+
+# RushJS temp dir
+.rush
