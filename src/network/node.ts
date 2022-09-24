@@ -1,5 +1,6 @@
 import { Bootstrap } from '@libp2p/bootstrap';
 import { Connection } from '@libp2p/interface-connection';
+import type { PeerId } from '@libp2p/interface-peer-id';
 import { createLibp2p, Libp2p } from 'libp2p';
 import { decodeMessage, encodeMessage, GossipMessage } from '~/network/protocol';
 import { err, ok, Result } from 'neverthrow';
@@ -35,7 +36,7 @@ export class Node extends TypedEmitter<NodeEvents> {
   /**
    * Returns the PublicKey of the node
    */
-  get peerId() {
+  get peerId(): PeerId|undefined {
     return this._node?.peerId;
   }
 

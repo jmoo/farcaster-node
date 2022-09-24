@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rm -rf ./build && tsc --project ./tsconfig.json  && tsconfig-replace-paths --project tsconfig.json",
+    "build": "rm -rf ./build && tsc --declaration --project ./tsconfig.json  && tsconfig-replace-paths --project tsconfig.json",
     "dev": "nodemon",
     "prepare": "husky install",
     "lint": "eslint . --ext .ts",
@@ -16,6 +16,9 @@
     "test:ci": "ENVIRONMENT=test NODE_OPTIONS=--experimental-vm-modules jest src/ --ci --runInBand --forceExit --coverage",
     "typecheck": "tsc --noEmit"
   },
+  "files": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/farcasterxyz/node-playground.git"
